@@ -138,9 +138,18 @@ add_action( 'widgets_init', 'capacitacion_widgets_init' );
  * Enqueue scripts and styles.
  */
 function capacitacion_scripts() {
+	//hoja de estilos por defecto del tema
 	wp_enqueue_style( 'capacitacion-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'capacitacion-style', 'rtl', 'replace' );
+	//hoja de estilos propios del template
+	wp_enqueue_style( 'vendor-style', get_template_directory_uri(  ).'/assets/css/vendor.css', array(),_S_VERSION);
+	wp_enqueue_style( 'main-style', get_template_directory_uri(  ).'/assets/css/style.css', array(),_S_VERSION);
+	wp_enqueue_style( 'responsive-style', get_template_directory_uri(  ).'/assets/css/responsive.css', array(),_S_VERSION);
 
+
+	//hojas de scripts
+	wp_enqueue_script( 'vendor',get_template_directory_uri(  ).'/assets/js/vendor.js',array(),_S_VERSION,true);
+	wp_enqueue_script( 'main',get_template_directory_uri(  ).'/assets/js/main.js',array(),_S_VERSION,true);
 	wp_enqueue_script( 'capacitacion-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -175,4 +184,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
