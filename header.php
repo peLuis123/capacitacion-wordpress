@@ -22,6 +22,8 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+<div id="page" class="site">
     <!-- preloader area start -->
     <div class="preloader" id="preloader">
         <div class="preloader-inner">
@@ -44,7 +46,6 @@
         </form>
     </div>
     <!-- search popup end-->
-<div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'capacitacion' ); ?></a>
 
 	<header id="masthead" class="site-header">
@@ -66,8 +67,7 @@
 				<p class="site-description"><?php echo $capacitacion_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
+        <nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'capacitacion' ); ?></button>
 			<?php
 			wp_nav_menu(
@@ -82,7 +82,7 @@
 	<header class="navbar-area">
         <div class="navbar-top">
             <div class="logo d-none d-lg-block">
-                <a class="main-logo" href="index.html"><img src="assets/img/logo.png" alt="img"></a>
+                <a class="<?php echo esc_attr(esc_url(home_url(('/')))) ?>main-logo" href="index.php"><img src="<?php echo esc_url(get_template_directory_uri()) ?>/assets/img/logo.png" alt="img"></a>
             </div>
             <div class="nav-phone-wrap">
                 <i class="fas fa-phone-alt"></i>
@@ -128,7 +128,7 @@
                     </button>
                 </div>
                 <div class="logo">
-                    <a href="index.html"><img src="assets/img/logo-2.png" alt="img"></a>
+                    <a href="index.html"><img src=" <?php echo esc_url(get_template_directory_uri()) ?>/assets/img/logo-2.png" alt="img"></a>
                 </div>
                 <div class="nav-left-part">
 
@@ -143,7 +143,23 @@
                       </span> Get A Quote
                     </a>
                 </div>
-                <div class="collapse navbar-collapse" id="transpro_main_menu">
+                <?php
+                /**
+                 * register main menu
+                 * @link
+                 * @since 1.0.0
+                 *
+                 */
+                $args = array(
+                    'theme_location'      => 'menu-1',
+                    'menu_id'             => 'transpro_main_menu',
+                    'container_class'     => 'collapse navbar-collapse',
+                    'menu_class'          => 'navbar-nav menu-open'
+                );
+                wp_nav_menu($args)
+                ?>
+
+                <!-- <div class="collapse navbar-collapse" id="transpro_main_menu">
                     <ul class="navbar-nav menu-open">
                         <li class="menu-item-has-children current-menu-item">
                             <a href="#">Home</a>
@@ -185,7 +201,7 @@
                         </li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="nav-right-part nav-right-part-desktop">
                     <a class="search-bar-btn" href="#">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,4 +214,15 @@
                 </div>
             </div>
         </nav>
+        <nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'capacitacion' ); ?></button>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				)
+			);
+			?>
+		</nav><!-- #site-navigation -->
     </header>
