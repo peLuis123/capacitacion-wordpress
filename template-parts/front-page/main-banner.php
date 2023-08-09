@@ -8,45 +8,41 @@
  */
 
 ?>
+
 <!-- banner start -->
 <div class="banner-area banner-area-1">
     <div class="banner-slider owl-carousel">
-        <div class="item" style="background: url(assets/img/banner/1.png);">
+    <!-- comienza aqui el repetible-->
+        <?php
+            $items = get_post_meta( get_the_ID ( ), 'banner_repeatable_group', true );
+            if (isset($items) && !empty($items)):
+                foreach ($items as $item):
+        ?>
+        <div class="item" style="background-image: url('<?php echo esc_attr($item['background-banner1']); ?>')">
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-8">
                         <div class="banner-inner style-white">
-                            <h1 class="b-animate-2 title">FAST CERTIFIED &
-                                BEST WORLD WIDE
-                                SERVICE</h1>
-                            <p class="b-animate-3 content">Professionally strategize stand-alone functionalities and cooperative total linkage. Objectively predominate virtual quality vectors with orthogonal.</p>
+                            <h1 class="b-animate-2 title"><?php echo esc_html($item['title']) ?></h1>
+                            <p class="b-animate-3 content"><?php echo esc_html($item['description']) ?></p>
                             <div class="btn-wrap">
-                                <a class="btn btn-base b-animate-4" href="service.html"> Explore The Services</a>
-                                <a class="btn btn-white b-animate-4" href="contact.html">Contact Us</a>
+                                <a class="btn btn-base b-animate-4" href="<?php echo esc_attr($item['buttonService']) ?>"><?php echo esc_html($item['Service']) ?></a>
+                                <a class="btn btn-white b-animate-4" href="<?php echo esc_attr($item['buttonAbout']) ?>"><?php echo esc_html($item['About']) ?></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="item" style="background: url(assets/img/banner/2.png);">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 col-md-8">
-                        <div class="banner-inner style-white">
-                            <h1 class="b-animate-2 title">FAST CERTIFIED &
-                                BEST WORLD WIDE
-                                SERVICE</h1>
-                            <p class="b-animate-3 content">Professionally strategize stand-alone functionalities and cooperative total linkage. Objectively predominate virtual quality vectors with orthogonal.</p>
-                            <div class="btn-wrap">
-                                <a class="btn btn-base b-animate-4" href="service.html"> Explore The Services</a>
-                                <a class="btn btn-white b-animate-4" href="contact.html">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+                endforeach;
+            endif;
+            ?>
+<!-- Termina aqui aqui -->
     </div>
 </div>
+
 <!-- banner end -->
+<?php
+printf('<pre>%s</pre>',var_export(get_post_custom( get_the_ID(  ) ), true));

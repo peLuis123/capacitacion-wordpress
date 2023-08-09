@@ -21,7 +21,7 @@
             $('.single-pricing-wrap').removeClass('single-pricing-wrap-active');
             $(this).addClass('single-pricing-wrap-active');
         });
-       
+
         /*-------------------------------------
             menu
         -------------------------------------*/
@@ -29,7 +29,7 @@
             $(this).toggleClass('open');
             $('.navbar-area .navbar-collapse').toggleClass('sopen');
         });
-    
+
         // mobile menu
         if ($(window).width() < 992) {
             $(".in-mobile").clone().appendTo(".sidebar-inner");
@@ -47,7 +47,7 @@
 
         var menutoggle = $('.menu-toggle');
         var mainmenu = $('.navbar-nav');
-        
+
         menutoggle.on('click', function() {
             if (menutoggle.hasClass('is-active')) {
                 mainmenu.removeClass('menu-open');
@@ -64,7 +64,7 @@
         }
 
         /* --------------------------------------------------
-            isotop filter 
+            isotop filter
         ---------------------------------------------------- */
         var $Container = $('.isotop-filter-area');
         if ($Container.length > 0) {
@@ -107,7 +107,7 @@
         bodyOvrelay.addClass('active');
         });
 
-        // sidebar menu 
+        // sidebar menu
         $(document).on('click', '.sidebar-menu-close', function (e) {
             e.preventDefault();
             bodyOvrelay.removeClass('active');
@@ -138,10 +138,10 @@
             dots: false,
             items: 1,
             smartSpeed: 1800,
-            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],           
+            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],
         });
 
-        
+
 
         /*------------------------------------------------
             feature-slider
@@ -154,8 +154,8 @@
             items: 3,
             loop: true,
             autoplay:true,
-            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],           
-            responsive : {                
+            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],
+            responsive : {
                 769 : {
                     items: 3,
                 },
@@ -165,7 +165,7 @@
                 0 : {
                     items: 1,
                 }
-            },             
+            },
         });
 
         /*------------------------------------------------
@@ -179,8 +179,8 @@
             items: 3,
             loop: true,
             autoplay:true,
-            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],           
-            responsive : {                
+            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],
+            responsive : {
                 769 : {
                     items: 3,
                 },
@@ -190,7 +190,7 @@
                 0 : {
                     items: 1,
                 }
-            },             
+            },
         });
 
         /*------------------------------------------------
@@ -204,8 +204,8 @@
             items: 3,
             loop: true,
             autoplay:true,
-            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],           
-            responsive : {                
+            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],
+            responsive : {
                 769 : {
                     items: 3,
                 },
@@ -215,7 +215,7 @@
                 0 : {
                     items: 1,
                 }
-            },  
+            },
         });
 
         /*------------------------------------------------
@@ -229,10 +229,10 @@
             items: 6,
             loop: true,
             autoplay:true,
-            responsive : { 
+            responsive : {
                 1024 : {
                     items: 6,
-                },               
+                },
                 769 : {
                     items: 3,
                 },
@@ -242,7 +242,7 @@
                 0 : {
                     items: 2,
                 }
-            },  
+            },
         });
 
         /*------------------------------------------------
@@ -256,8 +256,8 @@
             items: 3,
             loop: true,
             autoplay:true,
-            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],           
-            responsive : {                
+            navText: ['<img src="assets/img/icon/left-arrow.png"/>','<img src="assets/img/icon/right-arrow.png"/>'],
+            responsive : {
                 769 : {
                     items: 3,
                 },
@@ -267,7 +267,7 @@
                 0 : {
                     items: 1,
                 }
-            },             
+            },
         });
 
         /*------------------------------------------------
@@ -275,7 +275,7 @@
         ------------------------------------------------*/
         var $swiper = $(".swiper-container");
         var $bottomSlide = null;
-        var $bottomSlideContent = null; 
+        var $bottomSlideContent = null;
 
         var mySwiper = new Swiper(".swiper-container", {
             spaceBetween: 1,
@@ -331,7 +331,7 @@
                 complete: function() {
                     $this.text(this.countNum);
                 }
-            });  
+            });
         });
 
         /*------------------------------------------------
