@@ -17,79 +17,13 @@ get_header();
                 get_template_part( 'template-parts/front-page/main', 'banner');
                 get_template_part( 'template-parts/front-page/feature', 'area');
                 get_template_part( 'template-parts/front-page/about', 'area');
+                get_template_part( 'template-parts/front-page/services', 'area');
 
                 ?>
 
 
 
-                <!-- service area start -->
-                <div class="service-area pd-top-115 pd-bottom-90 pb-lg-0" style="background: url(assets/img/service/bg.png);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-7">
-                                <div class="section-title text-center">
-                                    <h4 class="subtitle style-2">SERVICES</h4>
-                                    <h2 class="title">OUR SERVICE FOR YOU</h2>
-                                    <p>Quickly optimize cooperative models for long-term high-impact ROI. Dynamically drive innovative e-commerce and distributed paradigms.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-service-wrap">
-                                    <div class="thumb">
-                                        <img src="<?php echo esc_url(get_template_directory_uri());?>/assets/img/service/1.png" alt="img">
-                                        <div class="icon">
-                                            <img src="<?php echo esc_url(get_template_directory_uri());?>/assets/img/service/service-icon-1.png" alt="img">
-                                        </div>
-                                    </div>
-                                    <div class="details">
-                                        <h5>SEA TRANSPORTATION</h5>
-                                        <p>Intrinsicly exploit e-business imperative with emerging human capital.</p>
-                                        <div class="btn-wrap">
-                                            <a class="read-more-text" href="service-details.html">READ MORE <span><i class="fa fa-arrow-right"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-service-wrap">
-                                    <div class="thumb">
-                                        <img src="<?php echo esc_url(get_template_directory_uri());?>/assets/img/service/2.png" alt="img">
-                                        <div class="icon">
-                                            <img src="<?php echo esc_url(get_template_directory_uri());?>/assets/img/service/service-icon-2.png" alt="img">
-                                        </div>
-                                    </div>
-                                    <div class="details">
-                                        <h5>AIR TRANSPORTATION</h5>
-                                        <p>Intrinsicly exploit e-business imperative with emerging human capital.</p>
-                                        <div class="btn-wrap">
-                                            <a class="read-more-text" href="service-details.html">READ MORE <span><i class="fa fa-arrow-right"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-service-wrap">
-                                    <div class="thumb">
-                                        <img src="<?php echo esc_url(get_template_directory_uri());?>/assets/img/service/3.png" alt="img">
-                                        <div class="icon">
-                                            <img src="<?php echo esc_url(get_template_directory_uri());?>/assets/img/service/service-icon-3.png" alt="img">
-                                        </div>
-                                    </div>
-                                    <div class="details">
-                                        <h5>WAREHOUSING</h5>
-                                        <p>Intrinsicly exploit e-business imperative with emerging human capital.</p>
-                                        <div class="btn-wrap">
-                                            <a class="read-more-text" href="service-details.html">READ MORE <span><i class="fa fa-arrow-right"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- service area end -->
+
 
                 <!--wcu-area start-->
                 <div class="wcu-area bg-overlay" style="background: url(assets/img/wcu/bg.png);">
